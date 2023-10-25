@@ -1,23 +1,27 @@
-const API = 'https://fakestoreapi.com/products'; /*aqui é o link da API*/ 
+let categoriaParametro = ''
 
+
+function chamarAPi() {
+let API = `https://fakestoreapi.com/products/${categoriaParametro}`; /*aqui é o link da API*/
 fetch(API) /* AQUI ELE TÁ BUSCANDO A API */
-.then(res=>res.json()) /* AQUI MOSTRA A RESPOSTA JASON */
-.then((data)=>mostrarProdutos(data)); /* AQUI IMPRIME A RESPOSTA NO LOG */
+  .then(res => res.json()) /* AQUI MOSTRA A RESPOSTA JASON */
+  .then((data) => mostrarProdutos(data)); /* AQUI IMPRIME A RESPOSTA NO LOG */
+}
+chamarAPi()
 
 
+function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
+  let produtos = document.querySelector('.produtos')/*  AQUI SELECIONA A DIV PAI = PRODUTOS */
+  produtos.innerHTML = ''
 
 
-
-function mostrarProdutos(data){ /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
-    let produtos = document.querySelector('.produtos')/*  AQUI SELECIONA A DIV PAI = PRODUTOS */
-
-    data.forEach(data => {
-        let produto = document.createElement('div') /*  AQUI ELE CRIA UM ELEMENTO*/
+  data.forEach(data => {
+    let produto = document.createElement('div') /*  AQUI ELE CRIA UM ELEMENTO*/
     produto.classList.add('produto') /* AQUI ELE ADICIONA CLASS NO ELEMENTO QUE FOI CRIADO */
 
-    produto.innerHTML=  /* IMPRIME O CONTEUDO QUE FOI CRIADO */
-    `
-    <img src="${data.image}" alt="PC Gamer">
+    produto.innerHTML =  /* IMPRIME O CONTEUDO QUE FOI CRIADO */
+      `
+    <img src="${data.image}">
     <h3> ${data.title} </h3>
     <span>R$ ${data.price} </span>
     <div class="botoes">
@@ -25,9 +29,31 @@ function mostrarProdutos(data){ /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
       <button>ver mais</button>
     </div> 
     `
-
     produtos.appendChild(produto) /*  COLOCA ELEMENTO FILHO DENTRO DO ELEMENTO PAI */
-    });
-    
+  });
+
 }
 /*  AQUI CHAMA A FUNÇÃO CRIADA */
+
+const botoesCategoria = document.querySelectorAll('header nav ul li')
+
+botoesCategoria.forEach((botaoCategoria) => {
+  botaoCategoria.addEventListener('click', (event) => {
+    const botaoinfo = event.target /* event targ é para pegar o elemento */
+    const nomeCategoria = botaoinfo.innerText /* innerTex é para pegar o texto dentro do elemento */
+    
+    categoriaParametro = `/category/${nomeCategoria}`
+
+    chamarAPi()
+  })
+
+})
+
+
+let home = document.querySelector('.voltarInicio')
+home.addEventListener('click',inicioHome);
+function inicioHome(){
+    categoriaParametro = ''
+chamarAPi()
+}
+  
