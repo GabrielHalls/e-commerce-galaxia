@@ -8,7 +8,10 @@ fetch(API) /* AQUI ELE TÁ BUSCANDO A API */
   .then((data) => mostrarProdutos(data)); /* AQUI IMPRIME A RESPOSTA NO LOG */
 }
 chamarAPi()
-
+   
+function mostrarDetalhes (row){
+  let detalheproduto = document.getElementById(row).style.display=''
+}
 
 function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
   let produtos = document.querySelector('.produtos')/*  AQUI SELECIONA A DIV PAI = PRODUTOS */
@@ -24,9 +27,10 @@ function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
     <img src="${data.image}">
     <h3> ${data.title} </h3>
     <span>R$ ${data.price} </span>
+    <span id="${data.id}" style="display:none;">R$ ${data.description} </span>
     <div class="botoes">
       <button>comprar</button>
-      <button>ver mais</button>
+      <button onclick="mostrarDetalhes(${data.id})">ver mais</button>
     </div> 
     `
     produtos.appendChild(produto) /*  COLOCA ELEMENTO FILHO DENTRO DO ELEMENTO PAI */
