@@ -11,7 +11,8 @@ body {
   background: url(../img/Spaceranger.gif);
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;/* O BACKGROUND FICA FIXADO */
+  background-attachment: fixed;
+  /* O BACKGROUND FICA FIXADO */
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
@@ -49,11 +50,11 @@ header nav ul {
   cursor: pointer;
 }
 
-header nav ul li{
+header nav ul li {
   transition: 0.8s;
 }
 
-header nav ul li:hover{
+header nav ul li:hover {
   transform: scale(1.1);
 }
 
@@ -76,6 +77,14 @@ header nav ul li:hover{
   display: flex;
   justify-content: center;
   margin-top: 30px;
+}
+
+.produto .descricao{
+  display: none;
+}
+
+.produto .descricao-on{
+  display: flex;
 }
 
 
@@ -117,13 +126,12 @@ header nav ul li:hover{
   transition: 1.3s;
   margin: 5px;
   cursor: pointer;
-  background:transparent;
+  background: transparent;
   color: white;
 }
 
-.botoes button:hover{
+
+.botoes button:hover {
   box-shadow: 0px 3px 10px #ffffffb0;
   transform: scale(1.1);
 }
-
-

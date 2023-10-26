@@ -8,10 +8,21 @@ fetch(API) /* AQUI ELE TÁ BUSCANDO A API */
   .then((data) => mostrarProdutos(data)); /* AQUI IMPRIME A RESPOSTA NO LOG */
 }
 chamarAPi()
-   
-function mostrarDetalhes (row){
-  let detalheproduto = document.getElementById(row).style.display=''
+
+/* function mostrarDetalhes(id) {
+  let detalheproduto = document.getElementById(id);
+  if (detalheproduto.style.display === 'none') {
+    detalheproduto.style.display = 'block'; // Mostra o elemento
+  } else {
+    detalheproduto.style.display = 'none'; // Oculta o elemento
+  }
 }
+ */
+
+   
+/* function mostrarDetalhes (row){
+  let detalheproduto = document.getElementById(row).style.display=''  ---- apagar depois qualquer coisa ---
+} */
 
 function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
   let produtos = document.querySelector('.produtos')/*  AQUI SELECIONA A DIV PAI = PRODUTOS */
@@ -27,14 +38,24 @@ function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
     <img src="${data.image}">
     <h3> ${data.title} </h3>
     <span>R$ ${data.price} </span>
-    <span id="${data.id}" style="display:none;">R$ ${data.description} </span>
+    <span class="descricao" id="${data.id}">${data.description} </span>
     <div class="botoes">
       <button>comprar</button>
-      <button onclick="mostrarDetalhes(${data.id})">ver mais</button>
+      <button class="verMaisprod">ver mais</button>
     </div> 
     `
     produtos.appendChild(produto) /*  COLOCA ELEMENTO FILHO DENTRO DO ELEMENTO PAI */
+
+    produto.querySelector('.verMaisprod').addEventListener('click', (event)=>{
+    const produtoInfo = event.target.parentElement.parentElement
+    const descricao = produtoInfo.querySelector(".descricao")
+    descricao.classList.toggle('descricao-on')
+    })
+
+  
   });
+
+ 
 
 }
 /*  AQUI CHAMA A FUNÇÃO CRIADA */
