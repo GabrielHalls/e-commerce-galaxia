@@ -9,20 +9,6 @@ fetch(API) /* AQUI ELE TÁ BUSCANDO A API */
 }
 chamarAPi()
 
-/* function mostrarDetalhes(id) {
-  let detalheproduto = document.getElementById(id);
-  if (detalheproduto.style.display === 'none') {
-    detalheproduto.style.display = 'block'; // Mostra o elemento
-  } else {
-    detalheproduto.style.display = 'none'; // Oculta o elemento
-  }
-}
- */
-
-   
-/* function mostrarDetalhes (row){
-  let detalheproduto = document.getElementById(row).style.display=''  ---- apagar depois qualquer coisa ---
-} */
 
 function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
   let produtos = document.querySelector('.produtos')/*  AQUI SELECIONA A DIV PAI = PRODUTOS */
