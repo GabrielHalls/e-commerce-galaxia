@@ -25,7 +25,7 @@ function mostrarProdutos(data) { /* CRIADO A FUNÇÃO P/ MOSTRAR OS PRODUTOS */
     <span>R$ ${data.price} </span>
     <span class="descricao" id="${data.id}">${data.description} </span>
     <div class="botoes">
-      <button>comprar</button>
+      <button id="teste1" class="teste">comprar</button>
       <button class="verMaisprod">ver mais</button>
     </div> 
     `
@@ -61,3 +61,10 @@ botoesCategoria.forEach((botaoCategoria) => {
       chamarAPi()
 }
 
+
+  function compraEfetuada(){
+    console.log("Sua compra feita com sucesso")
+  }
+
+    const botaoComprar = document.querySelector('#purchase-button')
+    botaoComprar.addEventListener('click', compraEfetuada)
