@@ -1,93 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-commerce-Galaxias</title>
-  <link rel="stylesheet" href="../e-commerce-galaxia/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap"
-    rel="stylesheet">
-  <link rel="shortcut icon" href="../e-commerce-galaxia/img/astronauta.png" type="image/x-icon">
+  <title>E-commerce Fake</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/produto.css">
 </head>
 
 <body>
-
   <header>
-    <h1 class="voltarInicio">E-commerce Galaxias</h1>
+      <h1 class="logo-title">E-Commerce Fake</h1>
+
     <nav>
       <ul>
-        <li>electronics</li>
-        <li>jewelery</li>
-        <li>men's clothing</li>
-        <li>women's clothing</li>
+        <li><a href="#">electronics</a></li>
+        <li><a href="#">jewelery</a></li>
+        <li><a href="#">men's clothing</a></li>
+        <li><a href="#">women's clothing</a></li>
       </ul>
-    </nav>
-  </header>
 
-
-  <main>
-
-    <div class="produtos">
-
-
-      <!--  <div class="produto">
-        <img src="../e-commerce-galaxia/img/pcGamer.png" alt="PC Gamer">
-        <h3>PC ITX Gamer FPS Headshot, Core I5 13400F, NVídia GeForce RTX 3060 12GB, 16GB Ram, SSD M.2 500GB </h3>
-        <span>R$ 3.000,00</span>
-        <div class="botoes">
-          <button>comprar</button>
-          <button>ver mais</button>
-        </div> -->
-    </div>
-
-    </div>
-
-    <section class="normal-section">
-      <h2 class="section-title">Carrinho</h2>
-
-      <div class="cart">
-        <ul>
-            <li>Produto</li>
-            
-            <li>Preço</li>
-            
-            <li>Quantidade</li>
-            
-        </ul>
-      
-                <!-- <div class="prod-qtd-input">
-            <img src="./img/mouseGamer.png" alt="">
-            <span>R$1.000,00</span>
-            <input type="number" value="1" min="0" class="product-qtd-input">
-          </div>
-                <div class="prod-qtd-input">
-            <img src="./img/mouseGamer.png" alt="">
-            <span>R$1.000,00</span>
-            <input type="number" value="1" min="0" class="product-qtd-input">
-          </div>
-                <div class="prod-qtd-input">
-            <img src="./img/mouseGamer.png" alt="">
-            <span>R$1.000,00</span>
-            <input type="number" value="1" min="0" class="product-qtd-input">
-          </div> -->
-         
-          <div class="btn-carrinho botoes">        
-    
-            <button type="button" class="purchase-button">Finalizar Compra</button>
-    
-          </div>
+      <div class="sacola">
+        <img src="./assets/sacola.svg" alt="">
       </div>
 
-      </section>
+    </nav>
+    <div class="menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+  </header>
 
+  <main>
+    <div class="title">
+      <h1>products</h1>
+    </div>
 
+    <div class="products">
+   
+    </div>
   </main>
-  <script src="./javascript/script.js"></script>
 
+  <footer>
+    <p>Desenvolvido por Halls &copy;</p>
+  </footer>
+
+  <div class="modal-check">
+
+    <div class="closed">X</div>
+    <h2>Check-out</h2>
+
+    <div class="products-card"></div>
+
+    <div class="busca-cep">
+      <h3>CEP</h3>
+      <div class="cep">
+        <input type="text" name="cep" id="cep" placeholder="cep">
+        <button class="buscar-cep">Buscar</button>
+      </div>
+      <div class="dados-cep">
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <label>
+        
+      </label>
+    </div>
+
+    <div class="summary">
+      <h3>Summary</h3>
+      <p>subtotal: <span>R$ 00,00</span></p>
+      <button>purchase</button>
+    </div>
+
+  </div>
+
+  <div class="pop-up"></div>
+  <script src="./js/script.js"></script>
 </body>
-
 
 </html>
